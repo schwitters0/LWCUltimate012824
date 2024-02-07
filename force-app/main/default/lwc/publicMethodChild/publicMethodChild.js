@@ -3,11 +3,11 @@ import { LightningElement, track, api } from 'lwc';
 export default class PublicMethodChild extends LightningElement {
     
     // PROPERTIES
-    @track value = ['red'];
+    @track value = [];
     options = [
             { label: 'Red Marker', value: 'red' },
             { label: 'Blue Marker', value: 'blue' },
-            { label: 'Green Marker', value: 'green' },
+            { label: 'Green Marker', value: 'green'},
             { label: 'Black Marker', value: 'black' }
     ];
 
@@ -19,7 +19,7 @@ export default class PublicMethodChild extends LightningElement {
         })
 
         if(selectedCheckbox){
-            this.value = selectedCheckbox;
+            this.value = selectedCheckbox.value;
             return "Successfully Checked";
         }
         
